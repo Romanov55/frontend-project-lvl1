@@ -1,9 +1,12 @@
 {
   "name": "project-lvl1",
-  "type": "module",
   "version": "1.0.0",
+  "type": "module",
   "description": "[![Actions Status](https://github.com/Romanov55/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Romanov55/frontend-project-lvl1/actions)",
   "main": "index.js",
+  "bin": {
+    "project-lvl1": "bin/brain-games.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -18,6 +21,3 @@
   },
   "homepage": "https://github.com/Romanov55/project-lvl1#readme"
 }
-  "bin": {
-     "brain-games": "bin/brain-games.js"
-  }
