@@ -10,35 +10,41 @@ console.log(`Hello, ${name}!`);
 
 console.log ("Answer 'yes' if number even otherwise answer 'no'");
 
-const rand = Math.random();
-let first = String(rand)[5];
-console.log(first)
+let i = 0
+do {
+    const rand = Math.floor(Math.random() * (100))
 
-console.log('Question: ' + first);
+    console.log('Question: ' + rand);
 
-const answer = readlineSync.question('Your answer: ');
+    const answer = readlineSync.question('Your answer: ');
 
-
-let even;
-let result;
-if (first % 2 === 0) {
-result = 'yes';
-}
-else {
-   result = 'no';
-}
-
-if (result === answer) {
-    console.log('Correct!');
-    console.log('Question: ' + first);
-}
-else {
-    if (answer === 'yes') {
-        console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-        console.log("Let's try again, " + name + '!');
+    let even;
+    let result;
+    if (rand % 2 === 0) {
+    result = 'yes';
     }
     else {
-        console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
-        console.log("Let's try again, " + name + '!');
+    result = 'no';
     }
-}
+
+    if (result === answer && i < 2) {
+        console.log('Correct!');
+    }
+    else if (i === 2 && result === answer) {
+        console.log('Correct!');
+        console.log('Congratulations, ' + name + '!');
+    }
+    else {
+        if (answer === 'yes') {
+            console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+            console.log("Let's try again, " + name + '!');
+            i = i + 3;
+        }
+        else {
+            console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
+            console.log("Let's try again, " + name + '!');
+            i = i + 3;
+        }
+    }
+    i = i + 1;
+} while (i < 3);
