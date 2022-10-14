@@ -1,3 +1,9 @@
-#!usr/bin/env node
+#!/usr/bin/env node
 
-console.log('Welcome to the Brain Games')
+import name from '../index.js'
+
+console.log('Welcome to the Brain Games!')
+
+name 
+
+console.log('Hello, '+name+'!')
