@@ -5,6 +5,7 @@
   "description": "[![Actions Status](https://github.com/Romanov55/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Romanov55/frontend-project-lvl1/actions)",
   "main": "index.js",
   "bin": {
+    "brain-even": "bin/brain-even.js",
     "brain-games": "bin/brain-games.js"
   },
   "scripts": {
