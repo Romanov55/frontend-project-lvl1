@@ -18,7 +18,6 @@ do {
 
     const answer = readlineSync.question('Your answer: ');
 
-    let even;
     let result;
     if (rand % 2 === 0) {
     result = 'yes';
