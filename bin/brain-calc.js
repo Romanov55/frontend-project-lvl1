@@ -20,26 +20,28 @@ do {
   let example;
 
   if (randomOperator === 0) {
-    console.log(`Question: ${rand + rand2}`);
+    console.log(`Question: ${rand} + ${rand2}`);
     example = rand + rand2;
   }
-  else if (randonOperator === 1) {
-    console.log(`Question: ${rand - rand2}`);
+  else if (randomOperator === 1) {
+    console.log(`Question: ${rand} - ${rand2}`);
     example = rand - rand2;
   }
   else {
-    console.log(`Question: ${rand * rand2}`);
+    console.log(`Question: ${rand} * ${rand2}`);
     example = rand * rand2;
   }
 
-  const answer = readlineSync.question('Your answer: ');
+  const answer = Number(readlineSync.question('Your answer: '));
 
   if (example === answer && i < 2) {
     console.log('Correct!');
-  } else if (i === 2 && example === answer) {
+  } 
+  else if (i === 2 && example === answer) {
     console.log('Correct!');
     console.log(`Congratulations, ${name}!`);
-  } else {
+  }
+  else {
     console.log( `'${answer}' is wrong answer ;(. Correct answer was '${example}'.`);
     console.log(`Let's try again, ${name}!`);
     i += 3;
