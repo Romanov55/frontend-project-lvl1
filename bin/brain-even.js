@@ -1,12 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
+import {welcome, name} from '../src/index.js';
 
-console.log('Welcome to the Brain Games!');
-
-const name = readlineSync.question('May I have your name? ');
-
-console.log(`Hello, ${name}!`);
+welcome
 
 console.log("Answer 'yes' if number even otherwise answer 'no'");
 
@@ -18,16 +15,16 @@ do {
 
   const answer = readlineSync.question('Your answer: ');
 
-  let result;
+  let example;
   if (rand % 2 === 0) {
-    result = 'yes';
+    example = 'yes';
   } else {
-    result = 'no';
+    example = 'no';
   }
 
-  if (result === answer && i < 2) {
+  if (example === answer && i < 2) {
     console.log('Correct!');
-  } else if (i === 2 && result === answer) {
+  } else if (i === 2 && example === answer) {
     console.log('Correct!');
     console.log(`Congratulations, ${name}!`);
   } else if (answer === 'yes') {
