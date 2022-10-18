@@ -7,22 +7,22 @@ console.log('What is the result of the expression?');
 
 let i = 0;
 do {
-  const rand = Math.floor(Math.random() * (100));
-  const rand2 = Math.floor(Math.random() * (100));
+  const randomNumber1 = Math.floor(Math.random() * (100));
+  const randomNumber2 = Math.floor(Math.random() * (100));
 
   const randomOperator = Math.floor(Math.random() * (3 - 0) + 0);
 
   let example;
 
   if (randomOperator === 0) {
-    console.log(`Question: ${rand} + ${rand2}`);
-    example = rand + rand2;
+    console.log(`Question: ${randomNumber1} + ${randomNumber2}`);
+    example = randomNumber1 + randomNumber2;
   } else if (randomOperator === 1) {
-    console.log(`Question: ${rand} - ${rand2}`);
-    example = rand - rand2;
+    console.log(`Question: ${randomNumber1} - ${randomNumber2}`);
+    example = randomNumber1 - randomNumber2;
   } else {
-    console.log(`Question: ${rand} * ${rand2}`);
-    example = rand * rand2;
+    console.log(`Question: ${randomNumber1} * ${randomNumber2}`);
+    example = randomNumber1 * randomNumber2;
   }
 
   const answer = Number(readlineSync.question('Your answer: '));
