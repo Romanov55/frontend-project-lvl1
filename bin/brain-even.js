@@ -3,7 +3,7 @@
 import readlineSync from 'readline-sync';
 import {welcome, name} from '../src/index.js';
 
-welcome
+welcome;
 
 console.log("Answer 'yes' if number even otherwise answer 'no'");
 
