@@ -5,7 +5,7 @@ import { name } from '../src/index.js';
 
 console.log('What number is missing in the progression?');
 
-function progress(mul, count, number) {
+const progress = (mul, count, number) => {
   const sum = [];
   let num = number;
 
@@ -18,27 +18,27 @@ function progress(mul, count, number) {
 
 let i = 0;
 do {
-  const rand = Math.floor(Math.random() * (100));
-  const rand2 = Math.floor((Math.random() * (100)) / 5);
+  const randomNumber1 = Math.floor(Math.random() * (100));
+  const randomNumber2 = Math.floor((Math.random() * (100)) / 5);
+  const randomTen = Math.floor(Math.random() * (11 - 1) + 0);
+  const maxNumbersString = 11;
 
-  const randomOperator = Math.floor(Math.random() * (11 - 1) + 0);
+  const allNumbers = progress(randomNumber1, maxNumbersString, randomNumber2);
 
-  const all = progress(rand, 11, rand2);
-
-  const allDot = [];
+  const massivQuestion = [];
   let example;
 
   for (let j = 0; j < 10; j += 1) {
-    if (j !== randomOperator) {
-      allDot.push(all[j]);
+    if (j !== randomTen) {
+      massivQuestion.push(allNumbers[j]);
     } else {
-      example = all[j];
-      allDot.push('..');
+      example = allNumbers[j];
+      massivQuestion.push('..');
     }
   }
-  const allAll = allDot.join(' ');
+  const finalQuestion = massivQuestion.join(' ');
 
-  console.log(`Question: ${allAll}`);
+  console.log(`Question: ${finalQuestion}`);
 
   const answer = Number(readlineSync.question('Your answer: '));
 
