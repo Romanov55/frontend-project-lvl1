@@ -5,6 +5,8 @@ import {welcome, name} from '../src/index.js';
 
 welcome
 
+console.log('What is the result of the expression?')
+
 let i = 0;
 do {
   const rand = Math.floor(Math.random() * (100));
