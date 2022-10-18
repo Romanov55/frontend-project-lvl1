@@ -1,9 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import {welcome, name} from '../src/index.js';
-
-welcome;
+import { name } from '../src/index.js';
 
 console.log("Answer 'yes' if number even otherwise answer 'no'");
 
