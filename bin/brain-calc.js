@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import {welcome, name} from '../src/index.js';
+import { name } from '../src/index.js';
 
-welcome;
-
-console.log('What is the result of the expression?')
+console.log('What is the result of the expression?');
 
 let i = 0;
 do {
@@ -19,12 +17,10 @@ do {
   if (randomOperator === 0) {
     console.log(`Question: ${rand} + ${rand2}`);
     example = rand + rand2;
-  }
-  else if (randomOperator === 1) {
+  } else if (randomOperator === 1) {
     console.log(`Question: ${rand} - ${rand2}`);
     example = rand - rand2;
-  }
-  else {
+  } else {
     console.log(`Question: ${rand} * ${rand2}`);
     example = rand * rand2;
   }
@@ -33,13 +29,11 @@ do {
 
   if (example === answer && i < 2) {
     console.log('Correct!');
-  } 
-  else if (i === 2 && example === answer) {
+  } else if (i === 2 && example === answer) {
     console.log('Correct!');
     console.log(`Congratulations, ${name}!`);
-  }
-  else {
-    console.log( `'${answer}' is wrong answer ;(. Correct answer was '${example}'.`);
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${example}'.`);
     console.log(`Let's try again, ${name}!`);
     i += 3;
   }
