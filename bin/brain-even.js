@@ -7,14 +7,14 @@ console.log("Answer 'yes' if number even otherwise answer 'no'");
 
 let i = 0;
 do {
-  const rand = Math.floor(Math.random() * (100));
+  const randonNumber = Math.floor(Math.random() * (100));
 
-  console.log(`Question: ${rand}`);
+  console.log(`Question: ${randonNumber}`);
 
   const answer = readlineSync.question('Your answer: ');
 
   let example;
-  if (rand % 2 === 0) {
+  if (randonNumber % 2 === 0) {
     example = 'yes';
   } else {
     example = 'no';
