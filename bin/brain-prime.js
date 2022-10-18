@@ -7,21 +7,21 @@ console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 let i = 0;
 do {
-  const rand = Math.floor(Math.random() * (100));
+  const randonNumber = Math.floor(Math.random() * (100));
 
-  console.log(`Question: ${rand}`);
+  console.log(`Question: ${randonNumber}`);
 
-  const numbers = [];
+  const noRemainder = [];
 
-  for (let j = 0; j < rand; j += 1) {
-    if (rand % j === 0) {
-      numbers.push(j);
+  for (let j = 0; j < randonNumber; j += 1) {
+    if (randonNumber % j === 0) {
+      noRemainder.push(j);
     }
   }
 
   let example;
 
-  if (numbers.length > 2) {
+  if (noRemainder.length > 2) {
     example = 'no';
   } else {
     example = 'yes';
