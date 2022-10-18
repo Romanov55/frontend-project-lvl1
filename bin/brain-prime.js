@@ -1,11 +1,9 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import {welcome, name} from '../src/index.js';
+import { name } from '../src/index.js';
 
-welcome;
-
-console.log('Answer "yes" if given number is prime. Otherwise answer "no".')
+console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 let i = 0;
 do {
@@ -13,21 +11,20 @@ do {
 
   console.log(`Question: ${rand}`);
 
-  let numbers = [];
+  const numbers = [];
 
-  for (let i = 0; i < rand; i += 1) {
-    if (rand % i === 0) {
-      numbers.push(i)
+  for (let j = 0; j < rand; j += 1) {
+    if (rand % j === 0) {
+      numbers.push(j);
     }
   }
 
-  let example; 
+  let example;
 
   if (numbers.length > 2) {
-    example = 'no'
-  }
-  else {
-    example = 'yes'
+    example = 'no';
+  } else {
+    example = 'yes';
   }
 
   const answer = readlineSync.question('Your answer: ');
