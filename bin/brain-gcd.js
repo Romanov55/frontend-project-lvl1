@@ -7,39 +7,39 @@ console.log('Find the greatest common divisor of given numbers.');
 
 let i = 0;
 do {
-  const rand = Math.floor(Math.random() * (100));
-  const rand2 = Math.floor((Math.random() * (100)) / 5 + 2);
+  const randomNumber1 = Math.floor(Math.random() * (100));
+  const randomNumber2 = Math.floor((Math.random() * (100)) / 5 + 2);
 
-  console.log(`Question: ${rand} ${rand2}`);
+  console.log(`Question: ${randomNumber1} ${randomNumber2}`);
 
   const answer = Number(readlineSync.question('Your answer: '));
 
-  const result = [];
+  const result1 = [];
   const result2 = [];
 
-  for (let j = 0; j <= rand; j += 1) {
-    if (rand % j === 0) {
-      result.push(j);
+  for (let j = 0; j <= randomNumber1; j += 1) {
+    if (randomNumber1 % j === 0) {
+      result1.push(j);
     }
   }
-  for (let c = 0; c <= rand2; c += 1) {
-    if (rand2 % c === 0) {
+  for (let c = 0; c <= randomNumber2; c += 1) {
+    if (randomNumber2 % c === 0) {
       result2.push(c);
     }
   }
 
-  let big;
-  if (result.length > result2.length) {
-    big = result.length;
+  let moreResult;
+  if (result1.length > result2.length) {
+    moreResult = result1.length;
   } else {
-    big = result2.length;
+    moreResult = result2.length;
   }
 
   let example;
 
-  for (let q = 0; q < big; q += 1) {
-    if (result[q] === result2[q]) {
-      example = result[q];
+  for (let q = 0; q < moreResult; q += 1) {
+    if (result1[q] === result2[q]) {
+      example = result1[q];
     }
   }
 
