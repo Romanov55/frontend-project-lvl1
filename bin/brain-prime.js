@@ -1,9 +1,28 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { name, divisionWithoutRemainder, comparison } from '../src/index.js';
+import { name, comparison } from '../src/index.js';
 
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+
+function isPrime(n) {
+  if (n < 2) {
+    return 'no';
+  } else if (n === 2) {
+    return 'yes';
+  }
+
+  let i = 2;
+  const limit = Math.sqrt(n);
+  while (i <= limit) {
+    if (n % i === 0) {
+      return 'no';
+    }
+    i +=1;
+  }
+  
+  return 'yes';
+}
 
 let i = 0;
 do {
@@ -11,17 +30,7 @@ do {
 
   console.log(`Question: ${randonNumber}`);
 
-  const massiv = [];
-
-  const noRemainder = divisionWithoutRemainder(randonNumber, massiv);
-
-  let example;
-
-  if (noRemainder.length > 2) {
-    example = 'no';
-  } else {
-    example = 'yes';
-  }
+  let example = isPrime(randonNumber)
 
   const answer = readlineSync.question('Your answer: ');
 
