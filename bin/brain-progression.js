@@ -14,7 +14,7 @@ const progress = (mul, count, number) => {
     sum.push(num);
   }
   return sum;
-}
+};
 
 let i = 0;
 do {
