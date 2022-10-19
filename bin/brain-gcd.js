@@ -17,13 +17,13 @@ do {
   const massiv1 = [];
   const massiv2 = [];
 
-  for (let j = 0; j > randomNumber1; j += 1) {
+  for (let j = 0; j < randomNumber1; j += 1) {
     if (randomNumber1 % j === 0) {
       massiv1.push(j);
     }
   }
 
-  for (let j = 0; j > randomNumber2; j += 1) {
+  for (let j = 0; j < randomNumber2; j += 1) {
     if (randomNumber2 % j === 0) {
       massiv2.push(j);
     }
@@ -39,8 +39,8 @@ do {
   let example;
 
   for (let q = 0; q < moreResult; q += 1) {
-    if (bigDiviso1[q] === bigDivisor2[q]) {
-      example = bigDiviso1[q];
+    if (massiv1[q] === massiv2[q]) {
+      example = massiv1[q];
     }
   }
 
