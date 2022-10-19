@@ -14,7 +14,7 @@ do {
 
   const answer = Number(readlineSync.question('Your answer: '));
   
-  const ran1 = randomNumber1 + 1;
+  const ran1 = randomNumber1 + 2;
   const ran2 = randomNumber2 + 2;
   const massiv1 = [];
   const massiv2 = [];
