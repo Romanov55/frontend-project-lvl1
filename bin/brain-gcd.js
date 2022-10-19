@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { name } from '../src/index.js';
+import { name, divisionWithoutRemainder } from '../src/index.js';
 
 console.log('Find the greatest common divisor of given numbers.');
 
@@ -14,32 +14,24 @@ do {
 
   const answer = Number(readlineSync.question('Your answer: '));
 
-  const result1 = [];
-  const result2 = [];
-
-  for (let j = 0; j <= randomNumber1; j += 1) {
-    if (randomNumber1 % j === 0) {
-      result1.push(j);
-    }
-  }
-  for (let c = 0; c <= randomNumber2; c += 1) {
-    if (randomNumber2 % c === 0) {
-      result2.push(c);
-    }
-  }
+  const massiv1 = [];
+  const massiv2 =[];
+  
+  const bigDiviso1 = divisionWithoutRemainder(randomNumber1, massiv1);
+  const bigDivisor2 = divisionWithoutRemainder(randomNumber2, massiv2);
 
   let moreResult;
-  if (result1.length > result2.length) {
-    moreResult = result1.length;
+  if (bigDiviso1.length > bigDivisor2.length) {
+    moreResult = bigDiviso1.length;
   } else {
-    moreResult = result2.length;
+    moreResult = bigDivisor2.length;
   }
 
   let example;
 
   for (let q = 0; q < moreResult; q += 1) {
-    if (result1[q] === result2[q]) {
-      example = result1[q];
+    if (bigDiviso1[q] === bigDivisor2[q]) {
+      example = bigDiviso1[q];
     }
   }
 
