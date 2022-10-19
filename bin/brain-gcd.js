@@ -13,17 +13,19 @@ do {
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
 
   const answer = Number(readlineSync.question('Your answer: '));
-
+  
+  const ran1 = randomNumber1 + 1;
+  const ran2 = randomNumber2 + 2;
   const massiv1 = [];
   const massiv2 = [];
 
-  for (let j = 0; j < randomNumber1; j += 1) {
+  for (let j = 0; j < ran1; j += 1) {
     if (randomNumber1 % j === 0) {
       massiv1.push(j);
     }
   }
 
-  for (let j = 0; j < randomNumber2; j += 1) {
+  for (let j = 0; j < ran2; j += 1) {
     if (randomNumber2 % j === 0) {
       massiv2.push(j);
     }
