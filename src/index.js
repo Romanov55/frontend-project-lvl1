@@ -15,11 +15,14 @@ export const divisionWithoutRemainder = (number, result) => {
   return result;
 };
 
-export const comparison = (number1, number2, item) => {
+export const comparison = (number1, number2, item, nam) => {
   if (number1 === number2 && item < 2) {
     console.log('Correct!');
   } else if (item === 2 && number1 === number2) {
     console.log('Correct!');
-    console.log(`Congratulations, ${name}!`);
+    console.log(`Congratulations, ${nam}!`);
+  } else {
+    console.log(`'${number2}' is wrong answer ;(. Correct answer was '${number1}'.`);
+    console.log(`Let's try again, ${nam}!`);
   }
 };
