@@ -8,7 +8,7 @@ console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 function isPrime(n) {
   if (n < 2) {
     return 'no';
-  } else if (n === 2) {
+  } else {
     return 'yes';
   }
 
@@ -18,9 +18,9 @@ function isPrime(n) {
     if (n % i === 0) {
       return 'no';
     }
-    i +=1;
+    i += 1;
   }
-  
+
   return 'yes';
 }
 
@@ -30,7 +30,7 @@ do {
 
   console.log(`Question: ${randonNumber}`);
 
-  let example = isPrime(randonNumber)
+  const example = isPrime(randonNumber);
 
   const answer = readlineSync.question('Your answer: ');
 
