@@ -26,11 +26,11 @@ do {
   const answer = readlineSync.question('Your answer: ');
 
   comparison(example, answer, i);
-  if (answer === 'yes' && example !== answer) {
+  if (answer !== 'no' && example !== answer) {
     console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
     console.log(`Let's try again, ${name}!`);
     i += 3;
-  } else if (answer === 'no' && example !== answer) {
+  } else if (answer !== 'yes' && example !== answer) {
     console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
     console.log(`Let's try again, ${name}!`);
     i += 3;
