@@ -3,7 +3,7 @@
 import readlineSync from 'readline-sync';
 import { name, comparison } from '../src/index.js';
 
-console.log("Answer 'yes' if number even otherwise answer 'no'");
+console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
 let i = 0;
 do {
