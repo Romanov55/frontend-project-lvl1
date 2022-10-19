@@ -15,8 +15,8 @@ do {
   const answer = Number(readlineSync.question('Your answer: '));
 
   const massiv1 = [];
-  const massiv2 =[];
-  
+  const massiv2 = [];
+
   const bigDiviso1 = divisionWithoutRemainder(randomNumber1, massiv1);
   const bigDivisor2 = divisionWithoutRemainder(randomNumber2, massiv2);
 
