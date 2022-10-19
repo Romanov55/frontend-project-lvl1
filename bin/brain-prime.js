@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { name } from '../src/index.js';
+import { name, divisionWithoutRemainder } from '../src/index.js';
 
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
@@ -11,13 +11,9 @@ do {
 
   console.log(`Question: ${randonNumber}`);
 
-  const noRemainder = [];
+  const massiv = [];
 
-  for (let j = 0; j < randonNumber; j += 1) {
-    if (randonNumber % j === 0) {
-      noRemainder.push(j);
-    }
-  }
+  const noRemainder = divisionWithoutRemainder(randonNumber,massiv);
 
   let example;
 
