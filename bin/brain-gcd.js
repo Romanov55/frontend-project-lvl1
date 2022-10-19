@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { name, divisionWithoutRemainder } from '../src/index.js';
+import { name, divisionWithoutRemainder, comparison } from '../src/index.js';
 
 console.log('Find the greatest common divisor of given numbers.');
 
@@ -35,12 +35,9 @@ do {
     }
   }
 
-  if (example === answer && i < 2) {
-    console.log('Correct!');
-  } else if (i === 2 && example === answer) {
-    console.log('Correct!');
-    console.log(`Congratulations, ${name}!`);
-  } else {
+  comparison(example, answer, i);
+
+  if (example !== answer) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${example}'.`);
     console.log(`Let's try again, ${name}!`);
     i += 3;
