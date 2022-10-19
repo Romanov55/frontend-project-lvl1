@@ -7,7 +7,7 @@ console.log('Find the greatest common divisor of given numbers.');
 
 let i = 0;
 do {
-  const randomNumber1 = Math.floor(Math.random() * (100));
+  const randomNumber1 = Math.floor(Math.random() * (100)+1);
   const randomNumber2 = Math.floor((Math.random() * (100)) / 5 + 2);
 
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
