@@ -23,11 +23,9 @@ do {
   }
   const example = randomNumber1;
 
-  comparison(example, answer, i);
+  comparison(example, answer, i, name);
 
   if (example !== answer) {
-    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${example}'.`);
-    console.log(`Let's try again, ${name}!`);
     i += 3;
   }
   i += 1;
