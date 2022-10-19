@@ -21,7 +21,7 @@ do {
   }
 
   comparisonYesNo(example, answer, i, name);
-  if (answer !== 'no' && example !== answer) {
+  if (example !== answer) {
     i += 3;
   }
   i += 1;
