@@ -27,7 +27,7 @@ do {
 
   const answer = Number(readlineSync.question('Your answer: '));
 
-  comparison(example, answer, i)
+  comparison(example, answer, i);
   if (example !== answer) {
     console.log(`'${answer}' is wrong answer ;(. Correct answer was '${example}'.`);
     console.log(`Let's try again, ${name}!`);
