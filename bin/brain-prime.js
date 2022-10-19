@@ -8,17 +8,18 @@ console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 function isPrime(n) {
   if (n < 2) {
     return 'no';
-  } else {
+  }
+  if (n === 2) {
     return 'yes';
   }
 
-  let i = 2;
+  let j = 2;
   const limit = Math.sqrt(n);
-  while (i <= limit) {
-    if (n % i === 0) {
+  while (j <= limit) {
+    if (n % j === 0) {
       return 'no';
     }
-    i += 1;
+    j += 1;
   }
 
   return 'yes';
