@@ -17,14 +17,23 @@ do {
   const massiv1 = [];
   const massiv2 = [];
 
-  const bigDiviso1 = divisionWithoutRemainder(randomNumber1, massiv1);
-  const bigDivisor2 = divisionWithoutRemainder(randomNumber2, massiv2);
+  for (let j = 0; j > randomNumber1; j += 1) {
+    if (randomNumber1 % j === 0) {
+      massiv1.push(j);
+    }
+  }
+
+  for (let j = 0; j > randomNumber2; j += 1) {
+    if (randomNumber2 % j === 0) {
+      massiv2.push(j);
+    }
+  }
 
   let moreResult;
-  if (bigDiviso1.length > bigDivisor2.length) {
-    moreResult = bigDiviso1.length;
+  if (massiv1.length > massiv2.length) {
+    moreResult = massiv1.length;
   } else {
-    moreResult = bigDivisor2.length;
+    moreResult = massiv2.length;
   }
 
   let example;
