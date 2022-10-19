@@ -26,3 +26,18 @@ export const comparison = (number1, number2, item, nam) => {
     console.log(`Let's try again, ${nam}!`);
   }
 };
+
+export const comparisonYesNo = (number1, number2, item, nam) => {
+  if (number1 === number2 && item < 2) {
+    console.log('Correct!');
+  } else if (item === 2 && number1 === number2) {
+    console.log('Correct!');
+    console.log(`Congratulations, ${nam}!`);
+  } else if (number2 !== 'no' && number1 !== number2) {
+    console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
+    console.log(`Let's try again, ${nam}!`);
+  } else {
+    console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
+    console.log(`Let's try again, ${nam}!`);
+  }
+};

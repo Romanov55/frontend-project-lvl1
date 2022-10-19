@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { name, comparison } from '../src/index.js';
+import { name, comparisonYesNo } from '../src/index.js';
 
 console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
@@ -35,14 +35,8 @@ do {
 
   const answer = readlineSync.question('Your answer: ');
 
-  comparison(example, answer, i);
+  comparisonYesNo(example, answer, i, name);
   if (answer !== 'no' && example !== answer) {
-    console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-    console.log(`Let's try again, ${name}!`);
-    i += 3;
-  } else if (answer !== 'yes' && example !== answer) {
-    console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
-    console.log(`Let's try again, ${name}!`);
     i += 3;
   }
   i += 1;

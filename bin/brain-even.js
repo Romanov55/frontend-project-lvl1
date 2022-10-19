@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import readlineSync from 'readline-sync';
-import { name } from '../src/index.js';
+import { name, comparisonYesNo } from '../src/index.js';
 
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
@@ -20,18 +20,8 @@ do {
     example = 'no';
   }
 
-  if (example === answer && i < 2) {
-    console.log('Correct!');
-  } else if (i === 2 && example === answer) {
-    console.log('Correct!');
-    console.log(`Congratulations, ${name}!`);
-  } else if (answer !== 'no' && example !== answer) {
-    console.log("'yes' is wrong answer ;(. Correct answer was 'no'.");
-    console.log(`Let's try again, ${name}!`);
-    i += 3;
-  } else {
-    console.log("'no' is wrong answer ;(. Correct answer was 'yes'.");
-    console.log(`Let's try again, ${name}!`);
+  comparisonYesNo(example, answer, i, name);
+  if (answer !== 'no' && example !== answer) {
     i += 3;
   }
   i += 1;
