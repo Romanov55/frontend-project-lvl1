@@ -14,14 +14,14 @@
 ## Запуск игр
 ```bash
 Необходимо в папке проекта ввести команды: 
-- **brain-even** - # Для запуска проверки на чётность
+**brain-even** # Для запуска проверки на чётность
 https://asciinema.org/connect/bcaf4cbf-042d-485b-894d-fab7ce767de1 # Видеоинструкция
-- **brain-calc** - # Решить выражение
+**brain-calc** # Решить выражение
 https://asciinema.org/a/FSp9PDAPEZZw0AEP5CGeZeM0z
-- **brain-gcd** - # Наибольший общий делитель 
+**brain-gcd** # Наибольший общий делитель 
 https://asciinema.org/a/Mu4jfFX2toZ545hnTMeg47Gvq
-- **brain-progression** - # Заполнить пропущенное число
+**brain-progression** # Заполнить пропущенное число
 https://asciinema.org/a/sKU6PITMnkITV9qu8f4C0tq9t
-- **brain-prime** - # Определить простое ли число
+**brain-prime** # Определить простое ли число
 https://asciinema.org/a/yzbL0imnP32X5bGllUSOdll0D
 ```
