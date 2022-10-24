@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
-[![Actions Status](https://github.com/Romanov55/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Romanov55/frontend-project-lvl1/actions)
+[![Actions Status](https://github.com/Romanov55/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Romanov55/frontend-project-lvl1/actions)(<a href="https://codeclimate.com/github/Romanov55/project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/ab6184aa01c1499b4663/maintainability" /></a>)
 
-<a href="https://codeclimate.com/github/Romanov55/project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/ab6184aa01c1499b4663/maintainability" /></a>
+
 
 https://asciinema.org/connect/bcaf4cbf-042d-485b-894d-fab7ce767de1 brain-even
 
