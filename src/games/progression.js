@@ -14,17 +14,18 @@ import randomNumber from '../rand.js';
     return sum;
   };
 
-const data = () => {
   const min1 = 1;
   const max1 = 100;
-  const number1 = randomNumber(min1, max1);
 
   const min2 = 1;
   const max2 = 25;
-  const number2 = randomNumber(min2, max2);
 
   const min3 = 1;
   const max3 = 10;
+
+const data = () => {
+  const number1 = randomNumber(min1, max1);
+  const number2 = randomNumber(min2, max2);
   const missingNumber = randomNumber(min3, max3);
 
   const maxNumbersString = 11;
