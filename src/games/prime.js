@@ -1,44 +1,41 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
+import randomNumber from '../rand.js';
 
-const solutionPrime = (name, comparisonYesNo) => {
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
+const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-  function isPrime(n) {
-    if (n < 2) {
-      return 'no';
-    }
-    if (n === 2) {
-      return 'yes';
-    }
-
-    let j = 2;
-    const limit = Math.sqrt(n);
-    while (j <= limit) {
-      if (n % j === 0) {
-        return 'no';
-      }
-      j += 1;
-    }
-
+function isPrime(n) {
+  if (n < 2) {
+    return 'no';
+  }
+  if (n === 2) {
     return 'yes';
   }
 
-  let i = 0;
-  do {
-    const randonNumber = Math.floor(Math.random() * (100));
-
-    console.log(`Question: ${randonNumber}`);
-
-    const example = isPrime(randonNumber);
-
-    const answer = readlineSync.question('Your answer: ');
-
-    comparisonYesNo(example, answer, i, name);
-    if (answer !== 'no' && example !== answer) {
-      i += 3;
+  let j = 2;
+  const limit = Math.sqrt(n);
+  while (j <= limit) {
+    if (n % j === 0) {
+      return 'no';
     }
-    i += 1;
-  } while (i < 3);
+    j += 1;
+  }
+
+  return 'yes';
+}
+
+const data = () => {
+  const min = 1;
+  const max = 100;
+  const number = randomNumber(min, max);
+
+  const question = `${number}`;
+
+  const rightAnswer = isPrime(number);
+
+  const result = [question, rightAnswer];
+  return result;
 };
+
+const solutionPrime = () => gameEngine(data, gameTask);
 
 export default solutionPrime;
