@@ -44,10 +44,10 @@ const data = () => {
     }
   }
   const finalQuestion = massivQuestion.join(' ');
-
   const question = `${finalQuestion}`;
 
-  return [question, String(rightAnswer)];
+  const result = [question, String(rightAnswer)];
+  return result;
 };
 
 const solutionProgression = () => gameEngine(data, gameTask);
