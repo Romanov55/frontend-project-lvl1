@@ -34,7 +34,6 @@ const data = () => {
 
   const massivQuestion = [];
   let rightAnswer;
-
   for (let j = 1; j < 10; j += 1) {
     if (j !== missingNumber) {
       massivQuestion.push(allNumbers[j]);
