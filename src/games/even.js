@@ -1,7 +1,8 @@
 import readlineSync from 'readline-sync';
 
-const solutionEven = (name, comparisonYesNo) => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no".');
+export const exercise = console.log('Answer "yes" if the number is even, otherwise answer "no".');
+
+export const solutionEven = (name, comparisonYesNo) => {
 
   let i = 0;
   do {
@@ -25,5 +26,3 @@ const solutionEven = (name, comparisonYesNo) => {
     i += 1;
   } while (i < 3);
 };
-
-export default solutionEven;
