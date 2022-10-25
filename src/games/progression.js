@@ -28,7 +28,7 @@ const data = () => {
   const number2 = randomNumber(min2, max2);
   const missingNumber = randomNumber(min3, max3);
 
-  const maxNumbersString = 11;
+  const maxNumbersString = 10;
 
   const allNumbers = progress(number1, number2, maxNumbersString);
 
