@@ -25,7 +25,7 @@ const gameEngine = (data, gameTask) => {
       return;
     }
   }
-  console.log(`Congratulation, ${name}!`);
+  console.log(`Congratulations, ${name}!`);
 };
 
 export default gameEngine;
