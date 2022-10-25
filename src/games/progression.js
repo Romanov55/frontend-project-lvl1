@@ -3,11 +3,11 @@ import randomNumber from '../rand.js';
 
 const gameTask = 'What number is missing in the progression?';
 
-const progress = (number1, number2, count) => {
+const progress = (number1, number2, maxNumbersString) => {
   const sum = [];
   let num = number2;
 
-  for (let i = 1; i < count; i += 1) {
+  for (let i = 1; i < maxNumbersString; i += 1) {
     num += number1;
     sum.push(num);
   }
@@ -42,7 +42,7 @@ const data = () => {
   const number2 = randomNumber(min2, max2);
   const missingNumber = randomNumber(min3, max3);
 
-  const maxNumbersString = 11;
+  const maxNumbersString = 10;
 
   const allNumbers = progress(number1, number2, maxNumbersString);
 
