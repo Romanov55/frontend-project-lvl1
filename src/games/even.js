@@ -13,11 +13,7 @@ export const solutionEven = (name, comparisonYesNo) => {
     const answer = readlineSync.question('Your answer: ');
 
     let example;
-    if (randonNumber % 2 === 0) {
-      example = 'yes';
-    } else {
-      example = 'no';
-    }
+    parityCheck(randonNumber, example);
 
     comparisonYesNo(example, answer, i, name);
     if (example !== answer) {
@@ -26,3 +22,12 @@ export const solutionEven = (name, comparisonYesNo) => {
     i += 1;
   } while (i < 3);
 };
+
+const parityCheck = (number, answer) {
+  if (number % 2 === 0) {
+    answer = 'yes';
+  } else {
+    answer = 'no';
+  }
+  return answer;
+}
