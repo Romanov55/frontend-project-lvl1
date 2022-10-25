@@ -1,57 +1,54 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
+import randomNumber from '../rand.js';
 
-const solutionProgression = (name) => {
-  console.log('What number is missing in the progression?');
-
-  const progress = (mul, count, number) => {
+  const gameTask = 'What number is missing in the progression?';
+  
+  const progress = (number1, number2, count) => {
     const sum = [];
-    let num = number;
+    let num = number2;
 
     for (let i = 1; i < count; i += 1) {
-      num += mul;
+      num += number1;
       sum.push(num);
     }
     return sum;
   };
 
-  let i = 0;
-  do {
-    const randomNumber1 = Math.floor(Math.random() * (100));
-    const randomNumber2 = Math.floor((Math.random() * (100)) / 5);
-    const randomTen = Math.floor(Math.random() * (11 - 1) + 0);
-    const maxNumbersString = 11;
+const data = () => {
+  const min1 = 1;
+  const max1 = 100;
+  const number1 = randomNumber(min1, max1);
 
-    const allNumbers = progress(randomNumber1, maxNumbersString, randomNumber2);
+  const min2 = 1;
+  const max2 = 25;
+  const number2 = randomNumber(min2, max2);
 
-    const massivQuestion = [];
-    let example;
+  const min3 = 1;
+  const max3 = 10;
+  const missingNumber = randomNumber(min3, max3);
 
-    for (let j = 0; j < 10; j += 1) {
-      if (j !== randomTen) {
-        massivQuestion.push(allNumbers[j]);
-      } else {
-        example = allNumbers[j];
-        massivQuestion.push('..');
-      }
+  const maxNumbersString = 11;
+
+  const allNumbers = progress(number1, number1, maxNumbersString);
+
+  const massivQuestion = [];
+  let rightAnswer;
+
+  for (let j = 0; j < 10; j += 1) {
+    if (j !== missingNumber) {
+      massivQuestion.push(allNumbers[j]);
+    } else {
+      rightAnswer = allNumbers[j];
+      massivQuestion.push('..');
     }
+  }
     const finalQuestion = massivQuestion.join(' ');
 
-    console.log(`Question: ${finalQuestion}`);
+    const question = `${finalQuestion}`;
 
-    const answer = Number(readlineSync.question('Your answer: '));
+    return [question, String(rightAnswer)]
+}
 
-    if (example === answer && i < 2) {
-      console.log('Correct!');
-    } else if (i === 2 && example === answer) {
-      console.log('Correct!');
-      console.log(`Congratulations, ${name}!`);
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${example}'.`);
-      console.log(`Let's try again, ${name}!`);
-      i += 3;
-    }
-    i += 1;
-  } while (i < 3);
-};
+const solutionProgression = () => gameEngine(data, gameTask)
 
 export default solutionProgression;
