@@ -15,10 +15,10 @@ export const divisionWithoutRemainder = (number, result) => {
   return result;
 };
 
-export const comparison = (number1, number2, item, nam) => {
-  if (number1 === number2 && item < 2) {
+export const comparison = (number1, number2, index, nam) => {
+  if (number1 === number2 && index < 2) {
     console.log('Correct!');
-  } else if (item === 2 && number1 === number2) {
+  } else if (index === 2 && number1 === number2) {
     console.log('Correct!');
     console.log(`Congratulations, ${nam}!`);
   } else {
@@ -27,10 +27,10 @@ export const comparison = (number1, number2, item, nam) => {
   }
 };
 
-export const comparisonYesNo = (number1, number2, item, nam) => {
-  if (number1 === number2 && item < 2) {
+export const comparisonYesNo = (number1, number2, index, nam) => {
+  if (number1 === number2 && index < 2) {
     console.log('Correct!');
-  } else if (item === 2 && number1 === number2) {
+  } else if (index === 2 && number1 === number2) {
     console.log('Correct!');
     console.log(`Congratulations, ${nam}!`);
   } else if (number2 !== 'no' && number1 !== number2) {
