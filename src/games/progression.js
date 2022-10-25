@@ -17,7 +17,7 @@ const progress = (number1, number2, maxNumbersString) => {
 const stringComposition = (missingNumber, allNumbers) => {
   const massivQuestion = [];
   let rightAnswer;
-  for (let j = 0; j < 9; j += 1) {
+  for (let j = 0; j < 10; j += 1) {
     if (j !== missingNumber) {
       massivQuestion.push(allNumbers[j]);
     } else {
@@ -35,14 +35,14 @@ const min2 = 1;
 const max2 = 25;
 
 const min3 = 0;
-const max3 = 9;
+const max3 = 10;
 
 const data = () => {
   const number1 = randomNumber(min1, max1);
   const number2 = randomNumber(min2, max2);
   const missingNumber = randomNumber(min3, max3);
 
-  const maxNumbersString = 10;
+  const maxNumbersString = 11;
 
   const allNumbers = progress(number1, number2, maxNumbersString);
 
