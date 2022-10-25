@@ -1,28 +1,25 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
+import randomNumber from '../rand.js';
 
-export const exercise = console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-export const solutionEven = (name, comparisonYesNo) => {
+const data = () => {
+  const min = 1;
+  const max = 100;
+  const number = randomNumber(min, max)
 
-  let i = 0;
-  do {
-    const randomNumber = Math.floor(Math.random() * (100));
+  const question = `${number}`;
 
-    console.log(`Question: ${randomNumber}`);
+  let rightAnswer;
+  if (number % 2 === 0) {
+    rightAnswer = 'yes';
+  } else {
+    rightAnswer = 'no';
+  }
+  const result = [question, rightAnswer]
+  return result;
+}
 
-    const answer = readlineSync.question('Your answer: ');
+const solutionEven = () => gameEngine(data, gameTask);
 
-    let example;
-    if (randomNumber % 2 === 0) {
-      example = 'yes';
-    } else {
-      example = 'no';
-    }
-
-    comparisonYesNo(example, answer, i, name);
-    if (example !== answer) {
-      i += 3;
-    }
-    i += 1;
-  } while (i < 3);
-};
+export default solutionEven;
