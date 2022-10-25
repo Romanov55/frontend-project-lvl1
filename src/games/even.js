@@ -6,14 +6,18 @@ export const solutionEven = (name, comparisonYesNo) => {
 
   let i = 0;
   do {
-    const randonNumber = Math.floor(Math.random() * (100));
+    const randomNumber = Math.floor(Math.random() * (100));
 
-    console.log(`Question: ${randonNumber}`);
+    console.log(`Question: ${randomNumber}`);
 
     const answer = readlineSync.question('Your answer: ');
 
     let example;
-    parityCheck(randonNumber, example);
+    if (randomNumber % 2 === 0) {
+      example = 'yes';
+    } else {
+      example = 'no';
+    }
 
     comparisonYesNo(example, answer, i, name);
     if (example !== answer) {
@@ -22,12 +26,3 @@ export const solutionEven = (name, comparisonYesNo) => {
     i += 1;
   } while (i < 3);
 };
-
-const parityCheck = (number, answer) {
-  if (number % 2 === 0) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
-  return answer;
-}
