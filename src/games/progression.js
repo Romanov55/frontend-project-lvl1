@@ -14,6 +14,20 @@ const progress = (number1, number2, count) => {
   return sum;
 };
 
+const stringComposition = (missingNumber, allNumbers) => {
+  let massivQuestion = [];
+  let rightAnswer;
+  for (let j = 1; j < 10; j += 1) {
+    if (j !== missingNumber) {
+      massivQuestion.push(allNumbers[j]);
+    } else {
+      rightAnswer = allNumbers[j];
+      massivQuestion.push('..');
+    }
+  }
+  return [massivQuestion, rightAnswer];
+}
+
 const min1 = 1;
 const max1 = 100;
 
@@ -32,16 +46,8 @@ const data = () => {
 
   const allNumbers = progress(number1, number2, maxNumbersString);
 
-  const massivQuestion = [];
-  let rightAnswer;
-  for (let j = 1; j < 10; j += 1) {
-    if (j !== missingNumber) {
-      massivQuestion.push(allNumbers[j]);
-    } else {
-      rightAnswer = allNumbers[j];
-      massivQuestion.push('..');
-    }
-  }
+  const [massivQuestion, rightAnswer] = stringComposition(missingNumber, allNumbers);
+
   const finalQuestion = massivQuestion.join(' ');
   const question = `${finalQuestion}`;
 
