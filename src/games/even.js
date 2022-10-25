@@ -1,10 +1,10 @@
 import readlineSync from 'readline-sync';
 
-export const solutionEven = (name, comparisonYesNo) => {
-    console.log('Answer "yes" if the number is even, otherwise answer "no".');
+const solutionEven = (name, comparisonYesNo) => {
+  console.log('Answer "yes" if the number is even, otherwise answer "no".');
 
-    let i = 0;
-    do {
+  let i = 0;
+  do {
     const randonNumber = Math.floor(Math.random() * (100));
 
     console.log(`Question: ${randonNumber}`);
@@ -13,16 +13,17 @@ export const solutionEven = (name, comparisonYesNo) => {
 
     let example;
     if (randonNumber % 2 === 0) {
-        example = 'yes';
+      example = 'yes';
     } else {
-        example = 'no';
+      example = 'no';
     }
 
     comparisonYesNo(example, answer, i, name);
     if (example !== answer) {
-        i += 3;
+      i += 3;
     }
     i += 1;
-    } while (i < 3);
+  } while (i < 3);
+};
 
-}
+export default solutionEven;
