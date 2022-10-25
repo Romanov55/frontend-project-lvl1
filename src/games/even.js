@@ -6,7 +6,7 @@ const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 const data = () => {
   const min = 1;
   const max = 100;
-  const number = randomNumber(min, max)
+  const number = randomNumber(min, max);
 
   const question = `${number}`;
 
@@ -16,9 +16,9 @@ const data = () => {
   } else {
     rightAnswer = 'no';
   }
-  const result = [question, rightAnswer]
+  const result = [question, rightAnswer];
   return result;
-}
+};
 
 const solutionEven = () => gameEngine(data, gameTask);
 
