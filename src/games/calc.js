@@ -6,16 +6,15 @@ const gameTask = 'What is the result of the expression?';
 const randomOperator = () => {
   const min2 = 1;
   const max2 = 3;
-  const randomOperator = randomNumber(min2, max2);
+  const randomOper = randomNumber(min2, max2);
 
-  if (randomOperator === 0) {
-    return '+'
-  } else if (randomOperator === 1) {
-    return '-'
-  } else {
-    return '*'
+  if (randomOper === 0) {
+    return '+';
+  } if (randomOper === 1) {
+    return '-';
   }
-}
+  return '*';
+};
 
 const data = () => {
   const min1 = 1;
@@ -28,8 +27,7 @@ const data = () => {
   if (randomOperator() === '+') {
     question = `${number1} + ${number2}`;
     rightAnswer = number1 + number2;
-  }
-  else if (randomOperator() === '-') {
+  } else if (randomOperator() === '-') {
     question = `${number1} - ${number2}`;
     rightAnswer = number1 - number2;
   } else {
@@ -38,7 +36,7 @@ const data = () => {
   }
   const result = [(question), String(rightAnswer)];
   return result;
-}
+};
 
 const solutionCalc = () => gameEngine(data, gameTask);
 
