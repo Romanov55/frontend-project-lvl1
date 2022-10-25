@@ -34,8 +34,8 @@ const max1 = 100;
 const min2 = 1;
 const max2 = 25;
 
-const min3 = 1;
-const max3 = 10;
+const min3 = 0;
+const max3 = 9;
 
 const data = () => {
   const number1 = randomNumber(min1, max1);
