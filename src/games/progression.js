@@ -1,27 +1,27 @@
 import gameEngine from '../index.js';
 import randomNumber from '../rand.js';
 
-  const gameTask = 'What number is missing in the progression?';
-  
-  const progress = (number1, number2, count) => {
-    const sum = [];
-    let num = number2;
+const gameTask = 'What number is missing in the progression?';
 
-    for (let i = 1; i < count; i += 1) {
-      num += number1;
-      sum.push(num);
-    }
-    return sum;
-  };
+const progress = (number1, number2, count) => {
+  const sum = [];
+  let num = number2;
 
-  const min1 = 1;
-  const max1 = 100;
+  for (let i = 1; i < count; i += 1) {
+    num += number1;
+    sum.push(num);
+  }
+  return sum;
+};
 
-  const min2 = 1;
-  const max2 = 25;
+const min1 = 1;
+const max1 = 100;
 
-  const min3 = 1;
-  const max3 = 10;
+const min2 = 1;
+const max2 = 25;
+
+const min3 = 1;
+const max3 = 10;
 
 const data = () => {
   const number1 = randomNumber(min1, max1);
@@ -30,7 +30,7 @@ const data = () => {
 
   const maxNumbersString = 11;
 
-  const allNumbers = progress(number1, number1, maxNumbersString);
+  const allNumbers = progress(number1, number2, maxNumbersString);
 
   const massivQuestion = [];
   let rightAnswer;
@@ -43,13 +43,13 @@ const data = () => {
       massivQuestion.push('..');
     }
   }
-    const finalQuestion = massivQuestion.join(' ');
+  const finalQuestion = massivQuestion.join(' ');
 
-    const question = `${finalQuestion}`;
+  const question = `${finalQuestion}`;
 
-    return [question, String(rightAnswer)]
-}
+  return [question, String(rightAnswer)];
+};
 
-const solutionProgression = () => gameEngine(data, gameTask)
+const solutionProgression = () => gameEngine(data, gameTask);
 
 export default solutionProgression;
