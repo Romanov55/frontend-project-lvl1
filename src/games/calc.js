@@ -1,36 +1,45 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
+import randomNumber from '../rand.js';
 
-const solutionCalc = (name, comparison) => {
-  console.log('What is the result of the expression?');
+const gameTask = 'What is the result of the expression?';
 
-  let i = 0;
-  do {
-    const randomNumber1 = Math.floor(Math.random() * (100));
-    const randomNumber2 = Math.floor(Math.random() * (100));
+const randomOperator = () => {
+  const min2 = 1;
+  const max2 = 3;
+  const randomOperator = randomNumber(min2, max2);
 
-    const randomOperator = Math.floor(Math.random() * (3 - 0) + 0);
+  if (randomOperator === 0) {
+    return '+'
+  } else if (randomOperator === 1) {
+    return '-'
+  } else {
+    return '*'
+  }
+}
 
-    let example;
+const data = () => {
+  const min1 = 1;
+  const max1 = 50;
+  const number1 = randomNumber(min1, max1);
+  const number2 = randomNumber(min1, max1);
 
-    if (randomOperator === 0) {
-      console.log(`Question: ${randomNumber1} + ${randomNumber2}`);
-      example = randomNumber1 + randomNumber2;
-    } else if (randomOperator === 1) {
-      console.log(`Question: ${randomNumber1} - ${randomNumber2}`);
-      example = randomNumber1 - randomNumber2;
-    } else {
-      console.log(`Question: ${randomNumber1} * ${randomNumber2}`);
-      example = randomNumber1 * randomNumber2;
-    }
+  let question;
+  let rightAnswer;
+  if (randomOperator() === '+') {
+    question = `${number1} + ${number2}`;
+    rightAnswer = number1 + number2;
+  }
+  else if (randomOperator() === '-') {
+    question = `${number1} - ${number2}`;
+    rightAnswer = number1 - number2;
+  } else {
+    question = `${number1} * ${number2}`;
+    rightAnswer = number1 * number2;
+  }
+  const result = [(question), String(rightAnswer)];
+  return result;
+}
 
-    const answer = Number(readlineSync.question('Your answer: '));
-
-    comparison(example, answer, i, name);
-    if (example !== answer) {
-      i += 3;
-    }
-    i += 1;
-  } while (i < 3);
-};
+const solutionCalc = () => gameEngine(data, gameTask);
 
 export default solutionCalc;
