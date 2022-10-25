@@ -1,33 +1,36 @@
-import readlineSync from 'readline-sync';
+import gameEngine from '../index.js';
+import randomNumber from '../rand.js';
 
-const solutionGcd = (name, comparison) => {
-  console.log('Find the greatest common divisor of given numbers.');
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
-  let i = 0;
-  do {
-    let randomNumber1 = Math.floor(Math.random() * (100) + 1);
-    let randomNumber2 = Math.floor((Math.random() * (100)) / 5 + 2);
-
-    console.log(`Question: ${randomNumber1} ${randomNumber2}`);
-
-    const answer = Number(readlineSync.question('Your answer: '));
-
-    while (randomNumber1 !== randomNumber2) {
-      if (randomNumber1 > randomNumber2) {
-        randomNumber1 -= randomNumber2;
-      } else {
-        randomNumber2 -= randomNumber1;
-      }
+const commonDivisor = (number1, number2) => {
+  while (number1 !== number2) {
+    if (number1 > number2) {
+      number1 -= number2;
+    } else {
+      number2 -= number1;
     }
-    const example = randomNumber1;
+  }
+  return number1;
+}
 
-    comparison(example, answer, i, name);
+const data = () => {
+  const min1 = 1;
+  const max1 = 100;
+  const number1 = randomNumber(min1, max1);
 
-    if (example !== answer) {
-      i += 3;
-    }
-    i += 1;
-  } while (i < 3);
-};
+  const min2 = 1;
+  const max2 = 25;
+  const number2 = randomNumber(min2, max2);
+
+  const question = `${number1} ${number2}`;
+
+  const rightAnswer = commonDivisor(number1, number2);
+
+  const result = [question, String(rightAnswer)];
+  return result;
+}
+
+const solutionGcd = () => gameEngine(data, gameTask);
 
 export default solutionGcd;
