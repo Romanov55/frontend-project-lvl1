@@ -15,7 +15,7 @@ const progress = (number1, number2, maxNumbersString) => {
 };
 
 const stringComposition = (missingNumber, allNumbers) => {
-  let massivQuestion = [];
+  const massivQuestion = [];
   let rightAnswer;
   for (let j = 0; j < 9; j += 1) {
     if (j !== missingNumber) {
@@ -26,7 +26,7 @@ const stringComposition = (missingNumber, allNumbers) => {
     }
   }
   return [massivQuestion, rightAnswer];
-}
+};
 
 const min1 = 1;
 const max1 = 100;
