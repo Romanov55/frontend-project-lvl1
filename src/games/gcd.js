@@ -8,7 +8,7 @@ const min = 1;
 const max1 = 25;
 const max2 = 100;
 
-const commonDivisor = (number1, number2) => {
+const getCommonDivisor = (number1, number2) => {
   if (number2 > number1) return commonDivisor(number2, number1);
   if (!number2) return number1;
   return commonDivisor(number2, number1 % number2);
@@ -20,7 +20,7 @@ const calculateData = () => {
 
   const question = `${number1} ${number2}`;
 
-  const rightAnswer = commonDivisor(number1, number2);
+  const rightAnswer = getCommonDivisor(number1, number2);
 
   const result = [question, String(rightAnswer)];
   return result;
