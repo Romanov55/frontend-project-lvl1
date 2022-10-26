@@ -9,7 +9,7 @@ const max1 = 25;
 const max2 = 100;
 
 const getCommonDivisor = (number1, number2) => {
-  if (number2 > number1) return commonDivisor(number2, number1);
+  if (number2 > number1) return getCommonDivisor(number2, number1);
   if (!number2) return number1;
   return getCommonDivisor(number2, number1 % number2);
 };
