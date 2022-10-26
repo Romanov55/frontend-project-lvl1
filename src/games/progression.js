@@ -11,15 +11,9 @@ const max3 = 50;
 
 const createProgression = (number1, number2, lengthOfProgression) => {
   const massiv = [];
-  let result = number1;
 
   for (let i = 1; i < lengthOfProgression; i += 1) {
-    if (massiv.length === 0) {
-      massiv.push(number1);
-    } else {
-      result += number2;
-      massiv.push(result);
-    }
+    massiv.push(number1 + number2 * i)
   }
   return massiv;
 };
