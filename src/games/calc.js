@@ -21,9 +21,9 @@ const data = () => {
   const max1 = 50;
   const number1 = randomNumber(min1, max1);
   const number2 = randomNumber(min1, max1);
-  
+
   const operator = randomOperator();
-  
+
   let question;
   let rightAnswer;
   if (operator === '+') {
