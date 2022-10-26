@@ -21,13 +21,15 @@ const data = () => {
   const max1 = 50;
   const number1 = randomNumber(min1, max1);
   const number2 = randomNumber(min1, max1);
-
+  
+  const operator = randomOperator();
+  
   let question;
   let rightAnswer;
-  if (randomOperator() === '+') {
+  if (operator === '+') {
     question = `${number1} + ${number2}`;
     rightAnswer = number1 + number2;
-  } else if (randomOperator() === '-') {
+  } else if (operator === '-') {
     question = `${number1} - ${number2}`;
     rightAnswer = number1 - number2;
   } else {
