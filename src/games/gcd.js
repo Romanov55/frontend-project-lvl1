@@ -1,7 +1,12 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import randomNumber from '../rand.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
+
+const min = 1;
+
+const max1 = 25;
+const max2 = 100;
 
 const commonDivisor = (number1, number2) => {
   if (number2 > number1) return commonDivisor(number2, number1);
@@ -9,14 +14,9 @@ const commonDivisor = (number1, number2) => {
   return commonDivisor(number2, number1 % number2);
 };
 
-const data = () => {
-  const min1 = 1;
-  const max1 = 100;
-  const number1 = randomNumber(min1, max1);
-
-  const min2 = 1;
-  const max2 = 25;
-  const number2 = randomNumber(min2, max2);
+const calculateData = () => {
+  const number1 = randomNumber(min, max2);
+  const number2 = randomNumber(min, max1);
 
   const question = `${number1} ${number2}`;
 
@@ -26,6 +26,6 @@ const data = () => {
   return result;
 };
 
-const solutionGcd = () => gameEngine(data, gameTask);
+const startGcd = () => runGameEngine(calculateData, gameTask);
 
-export default solutionGcd;
+export default startGcd;
