@@ -13,7 +13,7 @@ const createProgression = (number1, number2, lengthOfProgression) => {
   const massiv = [];
 
   for (let i = 1; i < lengthOfProgression; i += 1) {
-    massiv.push(number1 + number2 * i)
+    massiv.push(number1 + number2 * i);
   }
   return massiv;
 };
