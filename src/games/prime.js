@@ -1,41 +1,42 @@
-import gameEngine from '../index.js';
+import runGameEngine from '../index.js';
 import randomNumber from '../rand.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isPrime(n) {
+const min = 1;
+const max = 100;
+
+const isPrime = (n) => {
   if (n < 2) {
-    return 'no';
+    return false;
   }
   if (n === 2) {
-    return 'yes';
+    return true;
   }
 
   let j = 2;
   const limit = Math.sqrt(n);
   while (j <= limit) {
     if (n % j === 0) {
-      return 'no';
+      return false;
     }
     j += 1;
   }
 
-  return 'yes';
-}
+  return true;
+};
 
-const data = () => {
-  const min = 1;
-  const max = 100;
+const calculateData = () => {
   const number = randomNumber(min, max);
 
   const question = `${number}`;
 
-  const rightAnswer = isPrime(number);
+  const rightAnswer = isPrime(number) ? 'yes' : 'no';
 
   const result = [question, rightAnswer];
   return result;
 };
 
-const solutionPrime = () => gameEngine(data, gameTask);
+const startPrime = () => runGameEngine(calculateData, gameTask);
 
-export default solutionPrime;
+export default startPrime;
