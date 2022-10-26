@@ -15,7 +15,7 @@
 ```bash
 Необходимо в папке проекта ввести команды: 
 **make brain-even** # Для запуска проверки на чётность
-https://asciinema.org/connect/bcaf4cbf-042d-485b-894d-fab7ce767de1 # Видеоинструкция
+ https://asciinema.org/a/w9TEZgBqf45I7Aox4LGMr1F00 # Видеоинструкция
 **make brain-calc** # Решить выражение
 https://asciinema.org/a/FSp9PDAPEZZw0AEP5CGeZeM0z
 **make brain-gcd** # Наибольший общий делитель 
