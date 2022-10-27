@@ -10,18 +10,18 @@
 
 1. Открыть терминал, попасть в папку проектов, клонировать этот репозиторий: `git clone https://github.com/Romanov55/project-lvl1 my-new-project` (где `my-new-project` — папка для нового проекта).
 2. Перейти в папку нового проекта (в этом примере — `cd my-new-project`).
-3. Установить зависимости проекта: `npm ci`.
+3. Установить зависимости проекта: `make install`.
 ## Запуск игр
 ```bash
 Необходимо в папке проекта ввести команды: 
-**make brain-even** # Для запуска проверки на чётность
+**brain-even** # Для запуска проверки на чётность
  https://asciinema.org/a/w9TEZgBqf45I7Aox4LGMr1F00 # Видеоинструкция
-**make brain-calc** # Решить выражение
+**brain-calc** # Решить выражение
 https://asciinema.org/a/FSp9PDAPEZZw0AEP5CGeZeM0z
-**make brain-gcd** # Наибольший общий делитель 
+**brain-gcd** # Наибольший общий делитель 
 https://asciinema.org/a/Mu4jfFX2toZ545hnTMeg47Gvq
-**make brain-progression** # Заполнить пропущенное число
+**brain-progression** # Заполнить пропущенное число
 https://asciinema.org/a/sKU6PITMnkITV9qu8f4C0tq9t
-**make brain-prime** # Определить простое ли число
+**brain-prime** # Определить простое ли число
 https://asciinema.org/a/yzbL0imnP32X5bGllUSOdll0D
 ```
