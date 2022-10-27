@@ -3,52 +3,36 @@ import randomNumber from '../rand.js';
 
 const gameTask = 'What is the result of the expression?';
 
-const min1 = 1;
+const minNumberOperator = 0;
+const maxNumberOperator = 2;
 
-const max1 = 3;
-const max2 = 100;
+const minNumberRand = 1;
+const maxNumberRand = 100;
 
-const randomOperator = () => {
-  const randomOper = randomNumber(min1, max1);
+const operators = ['+', '-', '*'];
 
-  if (randomOper === 0) {
-    return '+';
-  } if (randomOper === 1) {
-    return '-';
-  }
-  return '*';
-};
-
-const calculateQuestionAndAnswer = (number1, number2, operator) => {
-  let question;
-  let rightAnswer;
+const calculateAnswer = (number1, number2, operator) => {
   if (operator === '+') {
-    question = `${number1} + ${number2}`;
-    rightAnswer = number1 + number2;
-  } else if (operator === '-') {
-    question = `${number1} - ${number2}`;
-    rightAnswer = number1 - number2;
-  } else {
-    question = `${number1} * ${number2}`;
-    rightAnswer = number1 * number2;
+    return number1 + number2;
+  } if (operator === '-') {
+    return number1 - number2;
   }
-  const result = [question, rightAnswer];
-  return result;
+  return number1 * number2;
 };
 
-const calculateData = () => {
-  const number1 = randomNumber(min1, max2);
-  const number2 = randomNumber(min1, max2);
+const getData = () => {
+  const number1 = randomNumber(minNumberRand, maxNumberRand);
+  const number2 = randomNumber(minNumberRand, maxNumberRand);
 
-  const operator = randomOperator();
+  const operator = operators[randomNumber(minNumberOperator, maxNumberOperator)];
 
-  const [question, rightAnswer] = calculateQuestionAndAnswer(number1, number2, operator);
+  const rightAnswer = calculateAnswer(number1, number2, operator);
 
-  const result = [question, String(rightAnswer)];
+  const question = `${number1} ${operator} ${number2}`;
 
-  return result;
+  return [question, String(rightAnswer)];
 };
 
-const startCalc = () => runGameEngine(calculateData, gameTask);
+const startCalc = () => runGameEngine(getData, gameTask);
 
 export default startCalc;
