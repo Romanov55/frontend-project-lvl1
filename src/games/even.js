@@ -3,30 +3,17 @@ import randomNumber from '../rand.js';
 
 const gameTask = 'Answer "yes" if the number is even, otherwise answer "no".';
 
-const min = 1;
-const max = 100;
+const minNumber = 1;
+const maxNumber = 100;
 
-const answerCalculation = (number) => {
-  let rightAnswer;
-  if (number % 2 === 0) {
-    rightAnswer = 'yes';
-  } else {
-    rightAnswer = 'no';
-  }
-  return rightAnswer;
+const getData = () => {
+  const question = randomNumber(minNumber, maxNumber);
+
+  const rightAnswer = question % 2 === 0 ? 'yes' : 'no';
+
+  return [question, rightAnswer];
 };
 
-const calculateData = () => {
-  const number = randomNumber(min, max);
-
-  const question = `${number}`;
-
-  const rightAnswer = answerCalculation(number);
-
-  const result = [question, rightAnswer];
-  return result;
-};
-
-const startEven = () => runGameEngine(calculateData, gameTask);
+const startEven = () => runGameEngine(getData, gameTask);
 
 export default startEven;
