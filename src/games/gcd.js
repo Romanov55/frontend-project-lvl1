@@ -3,10 +3,10 @@ import randomNumber from '../rand.js';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
-const min = 1;
+const minNumber = 1;
 
-const max1 = 25;
-const max2 = 100;
+const maxNumber = 25;
+const maxNumberRand = 100;
 
 const getCommonDivisor = (number1, number2) => {
   if (number2 > number1) return getCommonDivisor(number2, number1);
@@ -14,18 +14,17 @@ const getCommonDivisor = (number1, number2) => {
   return getCommonDivisor(number2, number1 % number2);
 };
 
-const calculateData = () => {
-  const number1 = randomNumber(min, max2);
-  const number2 = randomNumber(min, max1);
+const getData = () => {
+  const number1 = randomNumber(minNumber, maxNumber);
+  const number2 = randomNumber(minNumber, maxNumberRand);
 
   const question = `${number1} ${number2}`;
 
   const rightAnswer = getCommonDivisor(number1, number2);
 
-  const result = [question, String(rightAnswer)];
-  return result;
+  return [question, String(rightAnswer)];
 };
 
-const startGcd = () => runGameEngine(calculateData, gameTask);
+const startGcd = () => runGameEngine(getData, gameTask);
 
 export default startGcd;
