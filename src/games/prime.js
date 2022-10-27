@@ -3,40 +3,31 @@ import randomNumber from '../rand.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const min = 1;
-const max = 100;
+const minNumber = 1;
+const maxNumber = 100;
 
-const primeNumberCheck = (n) => {
+const isPrime = (n) => {
   if (n < 2) {
     return false;
   }
-  if (n === 2) {
-    return true;
-  }
 
-  let j = 2;
-  const limit = Math.sqrt(n);
-  while (j <= limit) {
-    if (n % j === 0) {
+  for (let i = 3; i <= Math.sqrt(n); i += 1) {
+    if (n % i === 0) {
       return false;
     }
-    j += 1;
   }
 
   return true;
 };
 
-const calculateData = () => {
-  const number = randomNumber(min, max);
+const getData = () => {
+  const question = randomNumber(minNumber, maxNumber);
 
-  const question = `${number}`;
+  const rightAnswer = isPrime(question) ? 'yes' : 'no';
 
-  const rightAnswer = primeNumberCheck(number) ? 'yes' : 'no';
-
-  const result = [question, rightAnswer];
-  return result;
+  return [question, rightAnswer];
 };
 
-const startPrime = () => runGameEngine(calculateData, gameTask);
+const startPrime = () => runGameEngine(getData, gameTask);
 
 export default startPrime;
