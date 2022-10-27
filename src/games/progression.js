@@ -3,38 +3,38 @@ import randomNumber from '../rand.js';
 
 const gameTask = 'What number is missing in the progression?';
 
-const min1 = 0;
-const min2 = 1;
+const minLengthProgresion = 0;
+const lengthOfProgression = 10;
 
-const max2 = 25;
-const max3 = 50;
+const minNumber = 1;
 
-const createProgression = (number1, number2, lengthOfProgression) => {
-  const massiv = [];
+const maxNumber = 25;
+const maxNumberRand = 50;
 
-  for (let i = 1; i < lengthOfProgression; i += 1) {
-    massiv.push(number1 + number2 * i);
+const createProgression = (number1, number2, length) => {
+  const array = [];
+
+  for (let i = 0; i < length; i += 1) {
+    array.push(number1 + number2 * i);
   }
-  return massiv;
+  return array;
 };
 
-const calculateData = () => {
-  const number1 = randomNumber(min2, max3);
-  const number2 = randomNumber(min2, max2);
-  const lengthOfProgression = 11;
+const getData = () => {
+  const number1 = randomNumber(minNumber, maxNumberRand);
+  const number2 = randomNumber(minNumber, maxNumber);
 
-  const missingNumber = randomNumber(min1, lengthOfProgression - 1);
+  const missingNumber = randomNumber(minLengthProgresion, lengthOfProgression);
 
-  const question = createProgression(number1, number2, lengthOfProgression);
+  const progression = createProgression(number1, number2, lengthOfProgression);
 
-  const rightAnswer = question[missingNumber];
+  const rightAnswer = progression[missingNumber];
 
-  question[missingNumber] = ['..'];
+  progression[missingNumber] = ['..'];
 
-  const result = [question.join(' '), String(rightAnswer)];
-  return result;
+  return [progression.join(' '), String(rightAnswer)];
 };
 
-const startProgressionGeneration = () => runGameEngine(calculateData, gameTask);
+const startProgressionGeneration = () => runGameEngine(getData, gameTask);
 
 export default startProgressionGeneration;
