@@ -1,5 +1,5 @@
 import runGameEngine from '../index.js';
-import randomNumber from '../rand.js';
+import getRandomNumber from '../rand.js';
 
 const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -20,7 +20,7 @@ const isPrime = (n) => {
 };
 
 const getData = () => {
-  const question = randomNumber(minNumber, maxNumber);
+  const question = getRandomNumber(minNumber, maxNumber);
 
   const rightAnswer = isPrime(question) ? 'yes' : 'no';
 
