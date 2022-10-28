@@ -11,7 +11,7 @@ const maxNumberRand = 100;
 const operators = ['+', '-', '*'];
 
 const calculateAnswer = (number1, number2, operator) => {
-  switch(operator) {
+  switch (operator) {
     case '+':
       return number1 + number2;
     case '-':
@@ -19,9 +19,9 @@ const calculateAnswer = (number1, number2, operator) => {
     case '*':
       return number1 * number2;
     default:
-      return 'Wrong'
+      return 'Wrong';
   }
-}
+};
 
 const getData = () => {
   const number1 = getRandomNumber(minNumberRand, maxNumberRand);
