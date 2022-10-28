@@ -1,5 +1,5 @@
 import runGameEngine from '../index.js';
-import randomNumber from '../rand.js';
+import getRandomNumber from '../rand.js';
 
 const gameTask = 'What number is missing in the progression?';
 
@@ -21,10 +21,10 @@ const createProgression = (number1, number2, length) => {
 };
 
 const getData = () => {
-  const number1 = randomNumber(minNumber, maxNumberRand);
-  const number2 = randomNumber(minNumber, maxNumber);
+  const number1 = getRandomNumber(minNumber, maxNumberRand);
+  const number2 = getRandomNumber(minNumber, maxNumber);
 
-  const missingNumber = randomNumber(minLengthProgresion, lengthOfProgression);
+  const missingNumber = getRandomNumber(minLengthProgresion, lengthOfProgression);
 
   const progression = createProgression(number1, number2, lengthOfProgression);
 
