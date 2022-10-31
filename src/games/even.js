@@ -1,4 +1,3 @@
-import { question } from 'readline-sync';
 import runGameEngine from '../index.js';
 import getRandomNumber from '../rand.js';
 
@@ -9,12 +8,10 @@ const maxNumber = 100;
 
 const isEven = (question) => {
   if (question % 2 === 0) {
-    return 'yes'
+    return 'yes';
   }
-  else {
-    return 'no'
-  }
-}
+  return 'no';
+};
 
 const getData = () => {
   const question = getRandomNumber(minNumber, maxNumber);
