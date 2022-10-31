@@ -19,7 +19,7 @@ const calculateAnswer = (number1, number2, operator) => {
     case '*':
       return number1 * number2;
     default:
-      return 'Wrong';
+      throw 'Не верный оператор'
   }
 };
 
