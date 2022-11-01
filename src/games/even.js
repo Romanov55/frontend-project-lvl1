@@ -8,15 +8,15 @@ const maxNumber = 100;
 
 const isEven = (question) => {
   if (question % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const getData = () => {
   const question = getRandomNumber(minNumber, maxNumber);
 
-  const rightAnswer = isEven(question);
+  const rightAnswer = isEven(question) ? 'yes' : 'no';
 
   return [question, rightAnswer];
 };
