@@ -7,10 +7,8 @@ const minNumber = 1;
 const maxNumber = 100;
 
 const isEven = (question) => {
-  if (question % 2 === 0) {
-    return true;
-  }
-  return false;
+  const result = question % 2 === 0;
+  return result;
 };
 
 const getData = () => {
